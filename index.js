@@ -7,7 +7,7 @@ const npmCommands = require('./utils/npmCommands');
 
 function copyToTemp() {
     return Promise.all(dependencies.map(dependecyFile => {
-        const from = path.join('..', 'node_modules', dependecyFile);
+        const from = path.join('..', dependecyFile);
         const to = path.join('temp', dependecyFile);
 
         return fsUtils.copyFile(from, to);
