@@ -23,12 +23,12 @@ function copyTempToNodeModulesAndRm() {
     console.log('copy', from, '->', to);
     fse.copySync(from, to);
 
-    console.log('remove', from);
-    fs.rmSync(from, { recursive: true });
-    fs.rmdirSync('temp');
+    // console.log('remove', from);
+    // fs.rmSync(from, { recursive: true });
+    // fs.rmdirSync('temp');
 }
 
 npmCommands.installMaterialUIDeps()
     .then(copyToTemp)
-    .then(npmCommands.uninstallMaterialUIDeps)
+    // .then(npmCommands.uninstallMaterialUIDeps)
     .then(copyTempToNodeModulesAndRm);
