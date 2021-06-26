@@ -32,11 +32,11 @@ function copyFile(from, to) {
         }
         const toFileExists = fs.statSync(to, { throwIfNoEntry: false });
         if (!toFileExists) {
-            console.log('copyFile', from, '->', to);
             fs.copyFile(from, to, (err) => {
                 if (err) {
                     reject(err);
                 } else {
+                    console.log('copyFile', from, '->', to);
                     resolve();
                 }
             });
