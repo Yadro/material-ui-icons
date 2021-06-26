@@ -1,3 +1,4 @@
+const fs = require('fs');
 const fse = require('fs-extra');
 const path = require('path');
 const dependencies = require('./createSvgIcon-dependencies.json');
@@ -15,13 +16,18 @@ function copyToTemp() {
     })
 }
 
-function copyToNodeModules() {
+function copyTempToNodeModulesAndRm() {
     const from = path.join('temp', '@material-ui');
     const to = path.join('..', 'node_modules', '@material-ui');
+    
+    console.log('copy', from, '->', to);
     fse.copySync(from, to);
+
+    console.log('remove temp', from);
+    fs.rmSync(from);
 }
 
 npmCommands.installMaterialUIDeps()
     .then(copyToTemp)
     .then(npmCommands.uninstallMaterialUIDeps)
-    .then(copyToNodeModules);
+    .then(copyTempToNodeModulesAndRm);

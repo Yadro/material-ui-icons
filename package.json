@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "This is patch for @material-ui/icons which allow use it without requiring the whole @material-ui/core dependecy",
   "main": "index.js",
+  "repository": {
+    "url": "https://github.com/Yadro/material-ui-icons-tiny.git"
+  },
   "scripts": {
     "postinstall": "node index.js"
   },
