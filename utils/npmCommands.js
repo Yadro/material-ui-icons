@@ -3,7 +3,7 @@ const { spawn } = require("child_process");
 
 function executeCommand(command, args) {
     return new Promise((resolve, reject) => {
-        console.info(`> ${command} ${args}`);
+        console.info(`> ${command} [${args.map(arg => `'${arg}'`)}]`);
         const process = spawn(command, args);
         process.stdout.on("data", data => {
             console.log(data.toString());
