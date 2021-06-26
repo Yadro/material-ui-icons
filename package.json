@@ -1,15 +1,17 @@
 {
   "name": "material-ui-icons-tiny",
   "version": "0.0.1",
-  "description": "This is patch for @material-ui/icons without requiring the whole @material-ui/core dependecy",
+  "description": "This is patch for @material-ui/icons which allow use it without requiring the whole @material-ui/core dependecy",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm i @material-ui/core && node patch.js"
+    "postinstall": "node index.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4",
+    "@material-ui/icons": "^4.11.2",
     "clsx": "^1.0.4",
     "css-vendor": "^2.0.8",
+    "fs-extra": "^10.0.0",
     "hoist-non-react-statics": "^3.3.2",
     "hyphenate-style-name": "^1.0.3",
     "is-in-browser": "^1.1.3",
