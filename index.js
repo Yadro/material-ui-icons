@@ -18,7 +18,7 @@ function copyToTemp() {
 
 function copyTempToNodeModulesAndRm() {
     const from = path.join(__dirname, 'temp', '@material-ui');
-    const to = path.join(__dirname, '..', 'node_modules', '@material-ui');
+    const to = path.join(__dirname, '..', '@material-ui');
 
     console.log('copy', from, '->', to);
     fse.copySync(from, to);
